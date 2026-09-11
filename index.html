@@ -21,22 +21,57 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Ethiopic:wght@400;500;700&display=swap" rel="stylesheet">
 
 </head>
 
-<body> 
+<body>
+
+    <!-- CONTACT BUTTON -->
+    <button id="contact-btn" type="button" aria-label="Contact" title="Contact">☎</button>
+
+    <!-- CONTACT POPUP -->
+    <div id="contact-popup" aria-hidden="true">
+        <div class="contact-box" role="dialog" aria-modal="true" aria-label="Contact information">
+            <button id="close-contact" type="button" aria-label="Close">&times;</button>
+            <p>Menu made by Dani · For your own restaurant menu, contact <a href="tel:0997194497">0997194497</a></p>
+        </div>
+    </div>
+
+    <!-- LANGUAGE TOGGLE -->
+    <button id="lang-toggle" type="button">አማ</button>
+
+    <!-- WELCOME SCREEN -->
+    <div id="welcome-screen">
+        <img class="welcome-logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtpZ1SipUYbKWid_vKs3spzzSVVE9MWdO-1j6gQJAXOeo29_qJejM6mDg&s">
+        <div class="welcome-text" data-en="Welcome to Kenteri Restaurant" data-am="እንኳን ወደ ከንተሪ ሬስቶራንት በደህና መጡ">Welcome to Kenteri Restaurant</div>
+    </div>
+
     <div class="title">
         <div class="logo"> 
             <img class="logo-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtpZ1SipUYbKWid_vKs3spzzSVVE9MWdO-1j6gQJAXOeo29_qJejM6mDg&s">
         </div>
-         MENU 
+         <span data-en="MENU" data-am="ሜኑ">MENU</span> 
     </div>
 
-    
+    <!-- LIVE SPECIALS BANNER -->
+    <div id="specials-banner">
+        <span id="specials-text">Today only: Mojito 200 ETB</span>
+    </div>
+
+    <!-- CATEGORY PROGRESS DOTS -->
+    <div id="progress-dots">
+        <a href="#food" class="dot" data-section="food"></a>
+        <a href="#drink" class="dot" data-section="drink"></a>
+        <a href="#desert" class="dot" data-section="desert"></a>
+    </div>
+
         <nav>
-                <a href="#food"> Foods</a>
-                 <a href="#drink">Drinks</a>
-                <a href="#desert">Deserts</a>
+                <a href="#food" data-en="Foods" data-am="ምግቦች"> Foods</a>
+                 <a href="#drink" data-en="Drinks" data-am="መጠጦች">Drinks</a>
+                <a href="#desert" data-en="Deserts" data-am="ጣፋጮች">Deserts</a>
                
         </nav>
     
@@ -51,13 +86,15 @@
 
     <div class="container"> 
 
-        <div class="popular">&#9734; Popular</div>
+        <div class="popular"><span class="star">&#9734;</span> <span data-en="Popular" data-am="ተወዳጅ">Popular</span></div>
 
-        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=815&auto=format&fit=crop" >
+        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=815&auto=format&fit=crop" loading="lazy">
         <div class="info">
-            <div class="food">Special Burger</div>
-            <div class="detail">beef, cheese, egg, vegetable</div>
-            <div class="price">500 ETB</div>
+            <div class="food" data-en="Special Burger" data-am="ስፔሻል በርገር">Special Burger</div>
+            <div class="detail" data-en="beef, cheese, egg, vegetable" data-am="የበሬ ስጋ፣ አይብ፣ እንቁላል፣ አትክልት">beef, cheese, egg, vegetable</div>
+            <div class="tags"><span class="tag chef" data-en="Chef's pick" data-am="የሼፍ ምርጫ">Chef's pick</span></div>
+            <div class="price">500 <span data-en="ETB" data-am="ብር">ETB</span></div>
+            <div class="more" data-en="Freshly prepared to order." data-am="በትዕዛዝ ትኩስ ተዘጋጅቶ ይቀርባል።">Freshly prepared to order.</div>
         </div>
 
     </div>
@@ -65,11 +102,12 @@
 
     <div class="container"> 
 
-        <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=815&auto=format&fit=crop" >
+        <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?q=80&w=815&auto=format&fit=crop" loading="lazy">
         <div class="info">
-            <div class="food">Classic Beef Burger</div>
-            <div class="detail">beef, cheese, lettuce, tomato</div>
-            <div class="price">450 ETB</div>
+            <div class="food" data-en="Classic Beef Burger" data-am="ክላሲክ የበሬ በርገር">Classic Beef Burger</div>
+            <div class="detail" data-en="beef, cheese, lettuce, tomato" data-am="የበሬ ስጋ፣ አይብ፣ ሰላጣ፣ ቲማቲም">beef, cheese, lettuce, tomato</div>
+            <div class="price">450 <span data-en="ETB" data-am="ብር">ETB</span></div>
+            <div class="more" data-en="Freshly prepared to order." data-am="በትዕዛዝ ትኩስ ተዘጋጅቶ ይቀርባል።">Freshly prepared to order.</div>
         </div>
 
     </div>
@@ -77,11 +115,12 @@
 
     <div class="container"> 
 
-        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=815&auto=format&fit=crop" >
+        <img src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?q=80&w=815&auto=format&fit=crop" loading="lazy">
         <div class="info">
-            <div class="food">Cheese Pizza</div>
-            <div class="detail">mozzarella, tomato sauce, oregano</div>
-            <div class="price">380 ETB</div>
+            <div class="food" data-en="Cheese Pizza" data-am="አይብ ፒዛ">Cheese Pizza</div>
+            <div class="detail" data-en="mozzarella, tomato sauce, oregano" data-am="ሞዞሬላ፣ የቲማቲም ሶስ፣ ኦሪጋኖ">mozzarella, tomato sauce, oregano</div>
+            <div class="price">380 <span data-en="ETB" data-am="ብር">ETB</span></div>
+            <div class="more" data-en="Freshly prepared to order." data-am="በትዕዛዝ ትኩስ ተዘጋጅቶ ይቀርባል።">Freshly prepared to order.</div>
         </div>
 
     </div>
@@ -89,11 +128,12 @@
 
     <div class="container"> 
 
-        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=815&auto=format&fit=crop" >
+        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=815&auto=format&fit=crop" loading="lazy">
         <div class="info">
-            <div class="food">Chicken Pizza</div>
-            <div class="detail">chicken, cheese, onion, pepper</div>
-            <div class="price">450 ETB</div>
+            <div class="food" data-en="Chicken Pizza" data-am="የዶሮ ፒዛ">Chicken Pizza</div>
+            <div class="detail" data-en="chicken, cheese, onion, pepper" data-am="ዶሮ፣ አይብ፣ ሽንኩርት፣ በርበሬ">chicken, cheese, onion, pepper</div>
+            <div class="price">450 <span data-en="ETB" data-am="ብር">ETB</span></div>
+            <div class="more" data-en="Freshly prepared to order." data-am="በትዕዛዝ ትኩስ ተዘጋጅቶ ይቀርባል።">Freshly prepared to order.</div>
         </div>
 
     </div>
@@ -101,11 +141,12 @@
 
     <div class="container"> 
 
-        <img src="https://images.unsplash.com/photo-1700768400970-428c50bffc11?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fENoaWNrZW4lMjBTYW5kd2ljaHxlbnwwfHwwfHx8MA%3D%3D" >
+        <img src="https://images.unsplash.com/photo-1700768400970-428c50bffc11?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTJ8fENoaWNrZW4lMjBTYW5kd2ljaHxlbnwwfHwwfHx8MA%3D%3D" loading="lazy">
         <div class="info">
-            <div class="food">Chicken Sandwich</div>
-            <div class="detail">grilled chicken, lettuce, tomato, mayo</div>
-            <div class="price">400 ETB</div>
+            <div class="food" data-en="Chicken Sandwich" data-am="የዶሮ ሳንድዊች">Chicken Sandwich</div>
+            <div class="detail" data-en="grilled chicken, lettuce, tomato, mayo" data-am="የተጠበሰ ዶሮ፣ ሰላጣ፣ ቲማቲም፣ ማዮኔዝ">grilled chicken, lettuce, tomato, mayo</div>
+            <div class="price">400 <span data-en="ETB" data-am="ብር">ETB</span></div>
+            <div class="more" data-en="Freshly prepared to order." data-am="በትዕዛዝ ትኩስ ተዘጋጅቶ ይቀርባል።">Freshly prepared to order.</div>
         </div>
 
     </div>
@@ -113,11 +154,12 @@
 
     <div class="container"> 
 
-        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=815&auto=format&fit=crop" >
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=815&auto=format&fit=crop" loading="lazy">
         <div class="info">
-            <div class="food">Beef Steak</div>
-            <div class="detail">grilled beef, vegetables, french fries</div>
-            <div class="price">650 ETB</div>
+            <div class="food" data-en="Beef Steak" data-am="የበሬ ስቴክ">Beef Steak</div>
+            <div class="detail" data-en="grilled beef, vegetables, french fries" data-am="የተጠበሰ የበሬ ስጋ፣ አትክልት፣ ፍራይ ድንች">grilled beef, vegetables, french fries</div>
+            <div class="price">650 <span data-en="ETB" data-am="ብር">ETB</span></div>
+            <div class="more" data-en="Freshly prepared to order." data-am="በትዕዛዝ ትኩስ ተዘጋጅቶ ይቀርባል።">Freshly prepared to order.</div>
         </div>
 
     </div>
@@ -125,11 +167,13 @@
 
     <div class="container"> 
 
-        <img src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q2hpY2tlbiUyMFdpbmdzfGVufDB8fDB8fHww" >
+        <img src="https://images.unsplash.com/photo-1567620832903-9fc6debc209f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q2hpY2tlbiUyMFdpbmdzfGVufDB8fDB8fHww" loading="lazy">
         <div class="info">
-            <div class="food">Chicken Wings</div>
-            <div class="detail">crispy chicken, spicy sauce, herbs</div>
-            <div class="price">420 ETB</div>
+            <div class="food" data-en="Chicken Wings" data-am="የዶሮ ክንፍ">Chicken Wings</div>
+            <div class="detail" data-en="crispy chicken, spicy sauce, herbs" data-am="ዶሮ፣ ቅመም ያለው ሶስ፣ ቅመማ ቅመም">crispy chicken, spicy sauce, herbs</div>
+            <div class="tags"><span class="tag spicy" data-en="Spicy" data-am="ቅመም ያለው">Spicy</span></div>
+            <div class="price">420 <span data-en="ETB" data-am="ብር">ETB</span></div>
+            <div class="more" data-en="Freshly prepared to order." data-am="በትዕዛዝ ትኩስ ተዘጋጅቶ ይቀርባል።">Freshly prepared to order.</div>
         </div>
 
     </div>
@@ -137,11 +181,12 @@
 
     <div class="container"> 
 
-        <img src="https://images.unsplash.com/photo-1611270629569-8b357cb88da9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QmVlZiUyMFBhc3RhfGVufDB8fDB8fHww" >
+        <img src="https://images.unsplash.com/photo-1611270629569-8b357cb88da9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8QmVlZiUyMFBhc3RhfGVufDB8fDB8fHww" loading="lazy">
         <div class="info">
-            <div class="food">Beef Pasta</div>
-            <div class="detail">pasta, beef, tomato sauce, parmesan</div>
-            <div class="price">480 ETB</div>
+            <div class="food" data-en="Beef Pasta" data-am="የበሬ ፓስታ">Beef Pasta</div>
+            <div class="detail" data-en="pasta, beef, tomato sauce, parmesan" data-am="ፓስታ፣ የበሬ ስጋ፣ የቲማቲም ሶስ፣ ፓርሜዛን">pasta, beef, tomato sauce, parmesan</div>
+            <div class="price">480 <span data-en="ETB" data-am="ብር">ETB</span></div>
+            <div class="more" data-en="Freshly prepared to order." data-am="በትዕዛዝ ትኩስ ተዘጋጅቶ ይቀርባል።">Freshly prepared to order.</div>
         </div>
 
     </div>
@@ -149,11 +194,12 @@
 
     <div class="container"> 
 
-        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=815&auto=format&fit=crop" >
+        <img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=815&auto=format&fit=crop" loading="lazy">
         <div class="info">
-            <div class="food">Chicken Fried Rice</div>
-            <div class="detail">rice, chicken, vegetables, egg</div>
-            <div class="price">400 ETB</div>
+            <div class="food" data-en="Chicken Fried Rice" data-am="የዶሮ ፍራይድ ራይስ">Chicken Fried Rice</div>
+            <div class="detail" data-en="rice, chicken, vegetables, egg" data-am="ሩዝ፣ ዶሮ፣ አትክልት፣ እንቁላል">rice, chicken, vegetables, egg</div>
+            <div class="price">400 <span data-en="ETB" data-am="ብር">ETB</span></div>
+            <div class="more" data-en="Freshly prepared to order." data-am="በትዕዛዝ ትኩስ ተዘጋጅቶ ይቀርባል።">Freshly prepared to order.</div>
         </div>
 
     </div>
@@ -161,11 +207,12 @@
 
     <div class="container"> 
 
-        <img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?q=80&w=815&auto=format&fit=crop" >
+        <img src="https://images.unsplash.com/photo-1553909489-cd47e0907980?q=80&w=815&auto=format&fit=crop" loading="lazy">
         <div class="info">
-            <div class="food">Club Sandwich</div>
-            <div class="detail">chicken, egg, cheese, lettuce, tomato</div>
-            <div class="price">450 ETB</div>
+            <div class="food" data-en="Club Sandwich" data-am="ክለብ ሳንድዊች">Club Sandwich</div>
+            <div class="detail" data-en="chicken, egg, cheese, lettuce, tomato" data-am="ዶሮ፣ እንቁላል፣ አይብ፣ ሰላጣ፣ ቲማቲም">chicken, egg, cheese, lettuce, tomato</div>
+            <div class="price">450 <span data-en="ETB" data-am="ብር">ETB</span></div>
+            <div class="more" data-en="Freshly prepared to order." data-am="በትዕዛዝ ትኩስ ተዘጋጅቶ ይቀርባል።">Freshly prepared to order.</div>
         </div>
 
     </div>
@@ -184,11 +231,12 @@
 
     <div class="container"> 
 
-        <img src="https://images.unsplash.com/photo-1632995561645-86a7777d3e7a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8TW9qaXRvfGVufDB8fDB8fHww" >
+        <img src="https://images.unsplash.com/photo-1632995561645-86a7777d3e7a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8TW9qaXRvfGVufDB8fDB8fHww" loading="lazy">
             <div class="info">
-        <div class="food">Mojito</div>
-        <div class="detail">mint, lime, sugar, soda water</div>
-        <div class="price">250 ETB</div>
+        <div class="food" data-en="Mojito" data-am="ሞጂቶ">Mojito</div>
+        <div class="detail" data-en="mint, lime, sugar, soda water" data-am="ሚንት፣ ሎሚ፣ ስኳር፣ ሶዳ ውሃ">mint, lime, sugar, soda water</div>
+        <div class="price">250 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Served chilled." data-am="በቀዝቃዛ ሁኔታ ይቀርባል።">Served chilled.</div>
             </div>
 
     </div>
@@ -196,11 +244,12 @@
 
     <div class="container"> 
 
-        <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?q=80&w=815&auto=format&fit=crop" >
+        <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?q=80&w=815&auto=format&fit=crop" loading="lazy">
             <div class="info">
-        <div class="food">Fresh Orange Juice</div>
-        <div class="detail">fresh oranges, natural juice</div>
-        <div class="price">200 ETB</div>
+        <div class="food" data-en="Fresh Orange Juice" data-am="ትኩስ ብርቱካን ጭማቂ">Fresh Orange Juice</div>
+        <div class="detail" data-en="fresh oranges, natural juice" data-am="ትኩስ ብርቱካን፣ የተፈጥሮ ጭማቂ">fresh oranges, natural juice</div>
+        <div class="price">200 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Served chilled." data-am="በቀዝቃዛ ሁኔታ ይቀርባል።">Served chilled.</div>
             </div>
 
     </div>
@@ -208,11 +257,12 @@
 
     <div class="container"> 
 
-        <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U3RyYXdiZXJyeSUyMFNtb290aGllfGVufDB8fDB8fHww" >
+        <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8U3RyYXdiZXJyeSUyMFNtb290aGllfGVufDB8fDB8fHww" loading="lazy">
             <div class="info">
-        <div class="food">Strawberry Smoothie</div>
-        <div class="detail">strawberry, milk, ice, sugar</div>
-        <div class="price">300 ETB</div>
+        <div class="food" data-en="Strawberry Smoothie" data-am="እንጆሪ ስሙዚ">Strawberry Smoothie</div>
+        <div class="detail" data-en="strawberry, milk, ice, sugar" data-am="እንጆሪ፣ ወተት፣ በረዶ፣ ስኳር">strawberry, milk, ice, sugar</div>
+        <div class="price">300 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Served chilled." data-am="በቀዝቃዛ ሁኔታ ይቀርባል።">Served chilled.</div>
             </div>
 
     </div>
@@ -220,11 +270,12 @@
 
     <div class="container"> 
 
-        <img src="https://images.unsplash.com/photo-1607644536940-6c300b5784c5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8UGluZWFwcGxlJTIwSnVpY2V8ZW58MHx8MHx8fDA%3D" >
+        <img src="https://images.unsplash.com/photo-1607644536940-6c300b5784c5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8UGluZWFwcGxlJTIwSnVpY2V8ZW58MHx8MHx8fDA%3D" loading="lazy">
             <div class="info">
-        <div class="food">Pineapple Juice</div>
-        <div class="detail">fresh pineapple, ice, natural juice</div>
-        <div class="price">220 ETB</div>
+        <div class="food" data-en="Pineapple Juice" data-am="አናናስ ጭማቂ">Pineapple Juice</div>
+        <div class="detail" data-en="fresh pineapple, ice, natural juice" data-am="ትኩስ አናናስ፣ በረዶ፣ የተፈጥሮ ጭማቂ">fresh pineapple, ice, natural juice</div>
+        <div class="price">220 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Served chilled." data-am="በቀዝቃዛ ሁኔታ ይቀርባል።">Served chilled.</div>
             </div>
 
     </div>
@@ -232,11 +283,12 @@
 
     <div class="container"> 
 
-        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=815&auto=format&fit=crop" >
+        <img src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?q=80&w=815&auto=format&fit=crop" loading="lazy">
             <div class="info">
-        <div class="food">Iced Tea</div>
-        <div class="detail">black tea, lemon, ice, sugar</div>
-        <div class="price">180 ETB</div>
+        <div class="food" data-en="Iced Tea" data-am="የበረዶ ሻይ">Iced Tea</div>
+        <div class="detail" data-en="black tea, lemon, ice, sugar" data-am="ጥቁር ሻይ፣ ሎሚ፣ በረዶ፣ ስኳር">black tea, lemon, ice, sugar</div>
+        <div class="price">180 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Served chilled." data-am="በቀዝቃዛ ሁኔታ ይቀርባል።">Served chilled.</div>
             </div>
 
     </div>
@@ -244,11 +296,12 @@
 
     <div class="container"> 
 
-        <img src="https://images.unsplash.com/photo-1546173159-315724a31696?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8TWFuZ28lMjBKdWljZXxlbnwwfHwwfHx8MA%3D%3D" >
+        <img src="https://images.unsplash.com/photo-1546173159-315724a31696?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8TWFuZ28lMjBKdWljZXxlbnwwfHwwfHx8MA%3D%3D" loading="lazy">
             <div class="info">
-        <div class="food">Mango Juice</div>
-        <div class="detail">fresh mango, ice, natural juice</div>
-        <div class="price">250 ETB</div>
+        <div class="food" data-en="Mango Juice" data-am="ማንጎ ጭማቂ">Mango Juice</div>
+        <div class="detail" data-en="fresh mango, ice, natural juice" data-am="ትኩስ ማንጎ፣ በረዶ፣ የተፈጥሮ ጭማቂ">fresh mango, ice, natural juice</div>
+        <div class="price">250 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Served chilled." data-am="በቀዝቃዛ ሁኔታ ይቀርባል።">Served chilled.</div>
             </div>
 
     </div>
@@ -256,11 +309,12 @@
 
     <div class="container">
 
-        <img src="https://plus.unsplash.com/premium_photo-1674327105074-46dd8319164b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2FwcHVjY2lub3xlbnwwfHwwfHx8MA%3D%3D" >
+        <img src="https://plus.unsplash.com/premium_photo-1674327105074-46dd8319164b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8Q2FwcHVjY2lub3xlbnwwfHwwfHx8MA%3D%3D" loading="lazy">
             <div class="info">
-        <div class="food">Cappuccino</div>
-        <div class="detail">espresso, steamed milk, milk foam</div>
-        <div class="price">220 ETB</div>
+        <div class="food" data-en="Cappuccino" data-am="ካፑችኖ">Cappuccino</div>
+        <div class="detail" data-en="espresso, steamed milk, milk foam" data-am="ኤስፕሬሶ፣ የተጣበበ ወተት፣ የወተት አረፋ">espresso, steamed milk, milk foam</div>
+        <div class="price">220 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Served chilled." data-am="በቀዝቃዛ ሁኔታ ይቀርባል።">Served chilled.</div>
             </div>
 
     </div>
@@ -268,11 +322,12 @@
 
     <div class="container">
 
-        <img src="https://images.unsplash.com/photo-1642647391072-6a2416f048e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fEljZWQlMjBDb2ZmZWV8ZW58MHx8MHx8fDA%3D" >
+        <img src="https://images.unsplash.com/photo-1642647391072-6a2416f048e5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fEljZWQlMjBDb2ZmZWV8ZW58MHx8MHx8fDA%3D" loading="lazy">
             <div class="info">
-        <div class="food">Iced Coffee</div>
-        <div class="detail">coffee, milk, ice, sugar</div>
-        <div class="price">250 ETB</div>
+        <div class="food" data-en="Iced Coffee" data-am="የበረዶ ቡና">Iced Coffee</div>
+        <div class="detail" data-en="coffee, milk, ice, sugar" data-am="ቡና፣ ወተት፣ በረዶ፣ ስኳር">coffee, milk, ice, sugar</div>
+        <div class="price">250 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Served chilled." data-am="በቀዝቃዛ ሁኔታ ይቀርባል።">Served chilled.</div>
             </div>
 
     </div>
@@ -280,11 +335,12 @@
 
     <div class="container">
 
-        <img src="https://images.unsplash.com/photo-1568909344668-6f14a07b56a0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8V2F0ZXJtZWxvbiUyMEp1aWNlfGVufDB8fDB8fHww" >
+        <img src="https://images.unsplash.com/photo-1568909344668-6f14a07b56a0?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8V2F0ZXJtZWxvbiUyMEp1aWNlfGVufDB8fDB8fHww" loading="lazy">
             <div class="info">
-        <div class="food">Watermelon Juice</div>
-        <div class="detail">fresh watermelon, ice, lime</div>
-        <div class="price">200 ETB</div>
+        <div class="food" data-en="Watermelon Juice" data-am="ሐብሐብ ጭማቂ">Watermelon Juice</div>
+        <div class="detail" data-en="fresh watermelon, ice, lime" data-am="ትኩስ ሐብሐብ፣ በረዶ፣ ሎሚ">fresh watermelon, ice, lime</div>
+        <div class="price">200 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Served chilled." data-am="በቀዝቃዛ ሁኔታ ይቀርባል።">Served chilled.</div>
             </div>
 
     </div>
@@ -292,33 +348,36 @@
 
     <div class="container">
 
-        <img src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?q=80&w=815&auto=format&fit=crop" >
+        <img src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?q=80&w=815&auto=format&fit=crop" loading="lazy">
             <div class="info">
-        <div class="food">Fresh Lemonade</div>
-        <div class="detail">fresh lemon, water, sugar, ice</div>
-        <div class="price">180 ETB</div>
+        <div class="food" data-en="Fresh Lemonade" data-am="ትኩስ ሎሚ ጭማቂ">Fresh Lemonade</div>
+        <div class="detail" data-en="fresh lemon, water, sugar, ice" data-am="ትኩስ ሎሚ፣ ውሃ፣ ስኳር፣ በረዶ">fresh lemon, water, sugar, ice</div>
+        <div class="price">180 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Served chilled." data-am="በቀዝቃዛ ሁኔታ ይቀርባል።">Served chilled.</div>
             </div>
 
     </div>
 
     <div class="container">
 
-        <img src="https://images.unsplash.com/photo-1680404005217-a441afdefe83?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U3ByaXRlfGVufDB8fDB8fHww" >
+        <img src="https://images.unsplash.com/photo-1680404005217-a441afdefe83?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8U3ByaXRlfGVufDB8fDB8fHww" loading="lazy">
             <div class="info">
-        <div class="food">Sprite</div>
+        <div class="food" data-en="Sprite" data-am="ስፕራይት">Sprite</div>
         <div class="detail"></div>
-        <div class="price">80 ETB</div>
+        <div class="price">80 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Served chilled." data-am="በቀዝቃዛ ሁኔታ ይቀርባል።">Served chilled.</div>
             </div>
 
     </div>
 
    <div class="container">
 
-        <img src="https://images.unsplash.com/photo-1624552184280-9e9631bbeee9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Q29jYXxlbnwwfHwwfHx8MA%3D%3D" >
+        <img src="https://images.unsplash.com/photo-1624552184280-9e9631bbeee9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Q29jYXxlbnwwfHwwfHx8MA%3D%3D" loading="lazy">
             <div class="info">
-        <div class="food">Coca</div>
+        <div class="food" data-en="Coca" data-am="ኮካ">Coca</div>
         <div class="detail"></div>
-        <div class="price">80 ETB</div>
+        <div class="price">80 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Served chilled." data-am="በቀዝቃዛ ሁኔታ ይቀርባል።">Served chilled.</div>
             </div>
 
     </div>
@@ -331,11 +390,13 @@
 
     <div class="container">
 
-        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fENob2NvbGF0ZSUyMENha2V8ZW58MHx8MHx8fDA%3D" >
+        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fENob2NvbGF0ZSUyMENha2V8ZW58MHx8MHx8fDA%3D" loading="lazy">
             <div class="info">
-        <div class="food">Chocolate Cake</div>
-        <div class="detail">chocolate, flour, eggs, cream</div>
-        <div class="price">300 ETB</div>
+        <div class="food" data-en="Chocolate Cake" data-am="ቸኮሌት ኬክ">Chocolate Cake</div>
+        <div class="detail" data-en="chocolate, flour, eggs, cream" data-am="ቸኮሌት፣ ዱቄት፣ እንቁላል፣ ክሬም">chocolate, flour, eggs, cream</div>
+        <div class="tags"><span class="tag veg" data-en="Popular" data-am="ተወዳጅ">Popular</span></div>
+        <div class="price">300 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Baked fresh daily." data-am="በየቀኑ ትኩስ ሆኖ ይጋገራል።">Baked fresh daily.</div>
             </div>
 
     </div>
@@ -343,11 +404,12 @@
 
     <div class="container">
 
-        <img src="https://images.unsplash.com/photo-1533136872-c5d7b7b800ae?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Q2hvY29sYXRlJTIwRG9udXR8ZW58MHx8MHx8fDA%3D" >
+        <img src="https://images.unsplash.com/photo-1533136872-c5d7b7b800ae?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Q2hvY29sYXRlJTIwRG9udXR8ZW58MHx8MHx8fDA%3D" loading="lazy">
             <div class="info">
-        <div class="food">Chocolate Donut</div>
-        <div class="detail">chocolate, flour, sugar, glaze</div>
-        <div class="price">180 ETB</div>
+        <div class="food" data-en="Chocolate Donut" data-am="ቸኮሌት ዶናት">Chocolate Donut</div>
+        <div class="detail" data-en="chocolate, flour, sugar, glaze" data-am="ቸኮሌት፣ ዱቄት፣ ስኳር፣ ግሌዝ">chocolate, flour, sugar, glaze</div>
+        <div class="price">180 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Baked fresh daily." data-am="በየቀኑ ትኩስ ሆኖ ይጋገራል።">Baked fresh daily.</div>
             </div>
 
     </div>
@@ -355,11 +417,12 @@
 
     <div class="container">
 
-        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=815&auto=format&fit=crop" >
+        <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?q=80&w=815&auto=format&fit=crop" loading="lazy">
             <div class="info">
-        <div class="food">Strawberry Cake</div>
-        <div class="detail">strawberry, cream, sponge cake</div>
-        <div class="price">350 ETB</div>
+        <div class="food" data-en="Strawberry Cake" data-am="እንጆሪ ኬክ">Strawberry Cake</div>
+        <div class="detail" data-en="strawberry, cream, sponge cake" data-am="እንጆሪ፣ ክሬም፣ ስፖንጅ ኬክ">strawberry, cream, sponge cake</div>
+        <div class="price">350 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Baked fresh daily." data-am="በየቀኑ ትኩስ ሆኖ ይጋገራል።">Baked fresh daily.</div>
             </div>
 
     </div>
@@ -367,11 +430,12 @@
 
     <div class="container">
 
-        <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q2hvY29sYXRlJTIwQ3VwY2FrZXxlbnwwfHwwfHx8MA%3D%3D" >
+        <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Q2hvY29sYXRlJTIwQ3VwY2FrZXxlbnwwfHwwfHx8MA%3D%3D" loading="lazy">
             <div class="info">
-        <div class="food">Chocolate Cupcake</div>
-        <div class="detail">chocolate, flour, cream, cocoa</div>
-        <div class="price">200 ETB</div>
+        <div class="food" data-en="Chocolate Cupcake" data-am="ቸኮሌት ኩባኬክ">Chocolate Cupcake</div>
+        <div class="detail" data-en="chocolate, flour, cream, cocoa" data-am="ቸኮሌት፣ ዱቄት፣ ክሬም፣ ኮኮዋ">chocolate, flour, cream, cocoa</div>
+        <div class="price">200 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Baked fresh daily." data-am="በየቀኑ ትኩስ ሆኖ ይጋገራል።">Baked fresh daily.</div>
             </div>
 
     </div>
@@ -379,11 +443,12 @@
 
     <div class="container">
 
-        <img src="https://images.unsplash.com/photo-1713759980319-8199058cef6b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8VmFuaWxsYSUyMEN1cGNha2V8ZW58MHx8MHx8fDA%3D" >
+        <img src="https://images.unsplash.com/photo-1713759980319-8199058cef6b?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8VmFuaWxsYSUyMEN1cGNha2V8ZW58MHx8MHx8fDA%3D" loading="lazy">
             <div class="info">
-        <div class="food">Vanilla Cupcake</div>
-        <div class="detail">vanilla, flour, eggs, buttercream</div>
-        <div class="price">180 ETB</div>
+        <div class="food" data-en="Vanilla Cupcake" data-am="ቫኒላ ኩባኬክ">Vanilla Cupcake</div>
+        <div class="detail" data-en="vanilla, flour, eggs, buttercream" data-am="ቫኒላ፣ ዱቄት፣ እንቁላል፣ ቅቤ ክሬም">vanilla, flour, eggs, buttercream</div>
+        <div class="price">180 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Baked fresh daily." data-am="በየቀኑ ትኩስ ሆኖ ይጋገራል።">Baked fresh daily.</div>
             </div>
 
     </div>
@@ -391,11 +456,12 @@
 
     <div class="container">
 
-        <img src="https://plus.unsplash.com/premium_photo-1733306657240-a398488ea835?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aWNlJTIwY3JlYW0lMjBzY29vcHxlbnwwfHwwfHx8MA%3D%3D" >
+        <img src="https://plus.unsplash.com/premium_photo-1733306657240-a398488ea835?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8aWNlJTIwY3JlYW0lMjBzY29vcHxlbnwwfHwwfHx8MA%3D%3D" loading="lazy">
             <div class="info">
-        <div class="food">Ice Cream</div>
-        <div class="detail">vanilla, milk, cream, chocolate sauce</div>
-        <div class="price">250 ETB</div>
+        <div class="food" data-en="Ice Cream" data-am="አይስ ክሬም">Ice Cream</div>
+        <div class="detail" data-en="vanilla, milk, cream, chocolate sauce" data-am="ቫኒላ፣ ወተት፣ ክሬም፣ የቸኮሌት ሶስ">vanilla, milk, cream, chocolate sauce</div>
+        <div class="price">250 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Baked fresh daily." data-am="በየቀኑ ትኩስ ሆኖ ይጋገራል።">Baked fresh daily.</div>
             </div>
 
     </div>
@@ -403,11 +469,12 @@
 
     <div class="container">
 
-        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=815&auto=format&fit=crop" >
+        <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=815&auto=format&fit=crop" loading="lazy">
             <div class="info">
-        <div class="food">Strawberry Donut</div>
-        <div class="detail">strawberry, flour, sugar, glaze</div>
-        <div class="price">200 ETB</div>
+        <div class="food" data-en="Strawberry Donut" data-am="እንጆሪ ዶናት">Strawberry Donut</div>
+        <div class="detail" data-en="strawberry, flour, sugar, glaze" data-am="እንጆሪ፣ ዱቄት፣ ስኳር፣ ግሌዝ">strawberry, flour, sugar, glaze</div>
+        <div class="price">200 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Baked fresh daily." data-am="በየቀኑ ትኩስ ሆኖ ይጋገራል።">Baked fresh daily.</div>
             </div>
 
     </div>
@@ -415,11 +482,12 @@
 
     <div class="container">
 
-        <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?q=80&w=815&auto=format&fit=crop" >
+        <img src="https://images.unsplash.com/photo-1587314168485-3236d6710814?q=80&w=815&auto=format&fit=crop" loading="lazy">
             <div class="info">
-        <div class="food">Cheesecake</div>
-        <div class="detail">cream cheese, biscuit, sugar, berries</div>
-        <div class="price">350 ETB</div>
+        <div class="food" data-en="Cheesecake" data-am="ችዝኬክ">Cheesecake</div>
+        <div class="detail" data-en="cream cheese, biscuit, sugar, berries" data-am="ክሬም አይብ፣ ብስኩት፣ ስኳር፣ ቤሪ">cream cheese, biscuit, sugar, berries</div>
+        <div class="price">350 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Baked fresh daily." data-am="በየቀኑ ትኩስ ሆኖ ይጋገራል።">Baked fresh daily.</div>
             </div>
 
     </div>
@@ -427,11 +495,13 @@
 
     <div class="container">
 
-        <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8VGlyYW1pc3V8ZW58MHx8MHx8fDA%3D" >
+        <img src="https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8VGlyYW1pc3V8ZW58MHx8MHx8fDA%3D" loading="lazy">
             <div class="info">
-        <div class="food">Tiramisu</div>
-        <div class="detail">coffee, mascarpone, cocoa, ladyfingers</div>
-        <div class="price">400 ETB</div>
+        <div class="food" data-en="Tiramisu" data-am="ቲራሚሱ">Tiramisu</div>
+        <div class="detail" data-en="coffee, mascarpone, cocoa, ladyfingers" data-am="ቡና፣ ማስካርፖኔ፣ ኮኮዋ፣ ሌዲፊንገርስ">coffee, mascarpone, cocoa, ladyfingers</div>
+        <div class="tags"><span class="tag chef" data-en="Chef's pick" data-am="የሼፍ ምርጫ">Chef's pick</span></div>
+        <div class="price">400 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Baked fresh daily." data-am="በየቀኑ ትኩስ ሆኖ ይጋገራል።">Baked fresh daily.</div>
             </div>
 
     </div>
@@ -439,11 +509,12 @@
 
     <div class="container">
 
-        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=815&auto=format&fit=crop" >
+        <img src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?q=80&w=815&auto=format&fit=crop" loading="lazy">
             <div class="info">
-        <div class="food">Chocolate Brownie</div>
-        <div class="detail">chocolate, flour, butter, walnuts</div>
-        <div class="price">250 ETB</div>
+        <div class="food" data-en="Chocolate Brownie" data-am="ቸኮሌት ብራውኒ">Chocolate Brownie</div>
+        <div class="detail" data-en="chocolate, flour, butter, walnuts" data-am="ቸኮሌት፣ ዱቄት፣ ቅቤ፣ ዎልነት">chocolate, flour, butter, walnuts</div>
+        <div class="price">250 <span data-en="ETB" data-am="ብር">ETB</span></div>
+        <div class="more" data-en="Baked fresh daily." data-am="በየቀኑ ትኩስ ሆኖ ይጋገራል።">Baked fresh daily.</div>
             </div>
 
     </div>
@@ -496,6 +567,124 @@
           goTo(idx - 1); // swipe right -> previous section
         }
       }, { passive: true });
+
+      // ---- CATEGORY PROGRESS DOTS ----
+      var dots = document.querySelectorAll('#progress-dots .dot');
+      function updateDots() {
+        var current = location.hash.replace('#', '') || sections[0];
+        dots.forEach(function (dot) {
+          dot.classList.toggle('active', dot.dataset.section === current);
+        });
+      }
+      window.addEventListener('hashchange', updateDots);
+      updateDots();
+    })();
+
+    // WELCOME SCREEN removal
+    (function () {
+      var welcome = document.getElementById('welcome-screen');
+      if (!welcome) return;
+
+      function hideWelcome() {
+        welcome.classList.add('fade-out');
+        setTimeout(function () {
+          welcome.style.display = 'none';
+        }, 600);
+      }
+
+      setTimeout(hideWelcome, 1800);
+      welcome.addEventListener('click', hideWelcome);
+    })();
+
+    // TAP-TO-EXPAND ITEM DETAILS
+    (function () {
+      var containers = document.querySelectorAll('.container');
+      containers.forEach(function (card) {
+        card.addEventListener('click', function () {
+          card.classList.toggle('expanded');
+        });
+      });
+    })();
+
+
+
+    // ---------- CONTACT POPUP ----------
+    (function () {
+      var contactBtn = document.getElementById('contact-btn');
+      var contactPopup = document.getElementById('contact-popup');
+      var closeContact = document.getElementById('close-contact');
+
+      function openContact() {
+        contactPopup.classList.add('show');
+        contactPopup.setAttribute('aria-hidden', 'false');
+      }
+
+      function closeContactPopup() {
+        contactPopup.classList.remove('show');
+        contactPopup.setAttribute('aria-hidden', 'true');
+      }
+
+      contactBtn.addEventListener('click', openContact);
+      closeContact.addEventListener('click', closeContactPopup);
+      contactPopup.addEventListener('click', function (e) {
+        if (e.target === contactPopup) closeContactPopup();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeContactPopup();
+      });
+    })();
+
+    // ---- LANGUAGE TOGGLE (one click, English <-> Amharic) ----
+    (function () {
+      var lang = 'en';
+      var translatable = document.querySelectorAll('[data-en]');
+      var btn = document.getElementById('lang-toggle');
+
+      var bannerMessages = {
+        en: [
+          'Today only: Mojito 200 ETB',
+          "Chef's pick: Special Burger",
+          'Try our Burger — made fresh daily'
+        ],
+        am: [
+          ' ሞጂቶ 200 ብር',
+          'የሼፍ ምርጫ፡ ስፔሻል በርገር',
+          'በርገራችንን ይሞክሩ — በየቀኑ ትኩስ ይዘጋጃል'
+        ]
+      };
+      var bannerIndex = 0;
+      var bannerEl = document.getElementById('specials-text');
+
+      function applyLanguage(newLang) {
+        lang = newLang;
+        translatable.forEach(function (el) {
+          var text = el.dataset[lang];
+          if (text !== undefined) el.textContent = text;
+        });
+        document.documentElement.lang = lang;
+        document.body.classList.toggle('am-active', lang === 'am');
+        if (btn) btn.textContent = lang === 'en' ? 'አማ' : 'EN';
+        if (bannerEl) bannerEl.textContent = bannerMessages[lang][bannerIndex];
+      }
+
+      if (btn) {
+        btn.addEventListener('click', function () {
+          applyLanguage(lang === 'en' ? 'am' : 'en');
+        });
+      }
+
+      // Rotate the specials banner, respecting whichever language is active
+      setInterval(function () {
+        if (!bannerEl) return;
+        bannerEl.style.opacity = 0;
+        setTimeout(function () {
+          bannerIndex = (bannerIndex + 1) % bannerMessages[lang].length;
+          bannerEl.textContent = bannerMessages[lang][bannerIndex];
+          bannerEl.style.opacity = 1;
+        }, 400);
+      }, 3500);
+
+      applyLanguage('en'); // normalize text on load
     })();
     </script>
 
@@ -507,6 +696,220 @@
 
 <style>
 
+
+    /* ---------- CONTACT BUTTON ---------- */
+    #contact-btn {
+        position: fixed;
+        top: 130px;
+        right: 12px;
+        z-index: 10001;
+        width: 60px;
+        height: 60px;
+        border: none;
+        border-radius: 50%;
+        background-color: RGB(95,66,29,0.7);
+        color: RGB(245,233,216);
+        font-family: Arial, sans-serif;
+        font-size: 30px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 3px 10px rgba(0,0,0,.15);
+        transition: transform .1s ease, opacity .2s ease;
+    }
+    #contact-btn:hover { transform: scale(1.06); }
+    #contact-btn:active { transform: scale(.92); }
+
+    /* ---------- CONTACT POPUP ---------- */
+    #contact-popup {
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,.35);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        z-index: 100002;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(3px);
+    }
+    #contact-popup.show { display: flex; }
+    .contact-box {
+        position: relative;
+        width: min(520px, 90vw);
+        height: 200px;
+        box-sizing: border-box;
+        background: RGB(245,233,216,0.4);
+        color: RGB(49,37,18);
+        border-radius: 20px;
+        padding: 35px 45px 30px 30px;
+        box-shadow: 0 15px 45px rgba(0,0,0,.25);
+        font-family: "Rubik", sans-serif;
+        font-size: 30px;
+        line-height: 1.5;
+        text-align: center;
+        animation: contactPop .2s ease-out;
+    }
+    .contact-box p { margin: 0; }
+    .contact-box a {
+        color: RGB(95,66,29);
+        font-weight: 700;
+        text-decoration: none;
+        white-space: nowrap;
+    }
+    .contact-box a:hover { text-decoration: underline; }
+    #close-contact {
+        position: absolute;
+        top: 8px;
+        right: 12px;
+        border: none;
+        background: transparent;
+        color: RGB(95,66,29);
+        font-size: 30px;
+        line-height: 1;
+        cursor: pointer;
+    }
+    @keyframes contactPop {
+        from { opacity: 0; transform: scale(.92); }
+        to { opacity: 1; transform: scale(1); }
+    }
+
+    /* ---------- LANGUAGE TOGGLE BUTTON ---------- */
+    #lang-toggle {
+        position: fixed;
+        top: 12px;
+        right: 12px;
+        z-index: 100001;
+        background-color: RGB(95,66,29);
+        color: RGB(245,233,216);
+        border: none;
+        font-family: "Rubik", sans-serif;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 8px 16px;
+        border-radius: 30px;
+        cursor: pointer;
+        width: 80px; height: 40px;
+    }
+    #lang-toggle:active {
+        transform: scale(0.95);
+    }
+    body.am-active .food,
+    body.am-active .detail,
+    body.am-active .more,
+    body.am-active .welcome-text,
+    body.am-active nav a,
+    body.am-active .tag,
+    body.am-active .title span,
+    body.am-active #specials-text {
+        font-family: "Noto Sans Ethiopic", "Rubik", sans-serif;
+    }
+
+    /* ---------- WELCOME SCREEN ---------- */
+    #welcome-screen {
+        position: fixed;
+        inset: 0;
+        background-color: RGB(172,144,118);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        z-index: 100000;
+        animation: welcomeFadeIn 0.7s ease;
+        transition: opacity 0.5s ease;
+    }
+    #welcome-screen.fade-out {
+        opacity: 0;
+        pointer-events: none;
+    }
+    .welcome-logo {
+        width: 500px;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 20px;
+        opacity: 0;
+        top: 20px;
+        animation: welcomeLogoPop 0.9s ease 0.15s forwards;
+    }
+    .welcome-text {
+        margin-top: 150px;
+        font-weight: 900;
+        font-family: "Shadows Into Light", cursive;
+        font-size: 90px;
+        color: RGB(49,37,18);
+        opacity: 0;
+        animation: welcomeTextRise 0.6s ease 0.5s forwards;
+        text-align: center;
+        max-width: 90vw;
+    }
+
+    @keyframes welcomeFadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @keyframes welcomeLogoPop {
+        from { opacity: 0; transform: scale(0.6); }
+        to { opacity: 1; transform: scale(1); }
+    }
+    @keyframes welcomeTextRise {
+        from { opacity: 0; transform: translateY(15px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---------- LIVE SPECIALS BANNER ---------- */
+    #specials-banner {
+        position: fixed;
+        top: 200px;
+        left: 0;
+        right: 0;
+        height: 45px;
+        background-color: RGB(95,66,29);
+        color: RGB(245,233,216);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Rubik", sans-serif;
+        font-size: 18px;
+        font-weight: 500;
+        z-index: 900;
+    }
+    #specials-text {
+        transition: opacity 0.4s ease;
+    }
+
+    /* ---------- CATEGORY PROGRESS DOTS ---------- */
+    #progress-dots {
+        position: fixed;
+        top: 245px;
+        left: 0;
+        right: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        z-index: 900;
+        padding: 10px 0;
+        background-color: RGB(172,144,118, 0.5);
+    }
+    #progress-dots .dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: RGB(255,255,255,0.5);
+        display: inline-block;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+    #progress-dots .dot.active {
+        background-color: RGB(95,66,29);
+        transform: scale(1.3);
+    }
+
+    main {
+        padding-top: 305px;
+    }
+
+    /* ---------- ANIMATED POPULAR BADGE ---------- */
     .popular{
         position: absolute;
         top: 40px;
@@ -516,6 +919,19 @@
         padding: 5px 10px;
         font-weight: lighter;
         border-radius: 80px;
+        z-index: 2;
+    }
+    .popular::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 80px;
+        border: 2px solid gold;
+        animation: popularPulse 2s ease-out infinite;
+    }
+    @keyframes popularPulse {
+        0% { transform: scale(1); opacity: 0.8; }
+        100% { transform: scale(1.6); opacity: 0; }
     }
 
     html:has(#food:target) nav a[href="#food"],
@@ -526,15 +942,8 @@ html:has(#desert:target) nav a[href="#desert"] {
   color: white;
 }
 
-
-
-    main {
-  padding-top: 200px;
-}
-
-
-    nav {
-  z-index: 10000000;
+  nav {
+  z-index: 100;
   background-color:RGB(170,140,125, 0.4);
   height: 150px;
   position: fixed;
@@ -583,6 +992,7 @@ html:has(#desert:target) nav a[href="#desert"] {
     display: none;
   }
 
+  /* ---------- STAGGERED CARD ENTRANCE ---------- */
  section:target {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -597,6 +1007,28 @@ html:has(#desert:target) nav a[href="#desert"] {
 
   main:has(section:target) section:first-of-type:not(:target) {
     display: none;
+  }
+
+  section .container {
+    opacity: 0;
+    transform: translateY(16px);
+    animation: cardEnter 0.45s ease forwards;
+  }
+  section .container:nth-child(1) { animation-delay: 0.03s; }
+  section .container:nth-child(2) { animation-delay: 0.08s; }
+  section .container:nth-child(3) { animation-delay: 0.13s; }
+  section .container:nth-child(4) { animation-delay: 0.18s; }
+  section .container:nth-child(5) { animation-delay: 0.23s; }
+  section .container:nth-child(6) { animation-delay: 0.28s; }
+  section .container:nth-child(7) { animation-delay: 0.33s; }
+  section .container:nth-child(8) { animation-delay: 0.38s; }
+  section .container:nth-child(9) { animation-delay: 0.43s; }
+  section .container:nth-child(10) { animation-delay: 0.48s; }
+  section .container:nth-child(11) { animation-delay: 0.53s; }
+
+  @keyframes cardEnter {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
   }
 
     .logo-img{
@@ -631,6 +1063,25 @@ html:has(#desert:target) nav a[href="#desert"] {
 
 
     }
+
+    /* ---------- DIETARY / SPICE TAGS ---------- */
+    .tags {
+        display: flex;
+        gap: 6px;
+        margin: 4px 0;
+    }
+    .tag {
+        font-family: "Rubik", sans-serif;
+        font-size: 12px;
+        font-weight: 700;
+        padding: 3px 10px;
+        border-radius: 30px;
+        color: RGB(49,37,18);
+    }
+    .tag.spicy { background-color: rgb(224,120,90); color: white; }
+    .tag.veg { background-color: rgb(140,190,110); color: RGB(30,55,15); }
+    .tag.chef { background-color: gold; color: black; }
+
     .price {
         width: auto;
         height: auto;
@@ -676,6 +1127,27 @@ html:has(#desert:target) nav a[href="#desert"] {
         align-items:start;
         padding-top: 10px;
         position: relative;
+        cursor: pointer;
+    }
+    .container:active {
+        transform: scale(0.97);
+    }
+
+    /* ---------- TAP-TO-EXPAND ---------- */
+    .more {
+        max-height: 0;
+        overflow: hidden;
+        opacity: 0;
+        font-family: "Rubik", sans-serif;
+        font-size: 16px;
+        color: RGB(95,66,29);
+        transition: max-height 0.35s ease, opacity 0.35s ease, margin 0.35s ease;
+        margin-top: 0;
+    }
+    .container.expanded .more {
+        max-height: 80px;
+        opacity: 1;
+        margin-top: 8px;
     }
 
     .both-row {
@@ -693,7 +1165,7 @@ html:has(#desert:target) nav a[href="#desert"] {
         
         justify-content: start;
         width:100%;
-        height: 200px;
+        height: 180px;
         color: RGB(49,37,18);
         align-items: center;
         background-color:RGB(172,144,118);
