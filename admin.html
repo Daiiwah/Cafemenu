@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu Admin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Rubik", sans-serif;
+    background-color: rgb(172,144,118,0.25);
+    color: rgb(49,37,18);
+    padding: 20px;
+    padding-bottom: 100px;
+  }
+  h1 {
+    font-size: 26px;
+    color: rgb(95,66,29);
+    text-align: center;
+    margin-bottom: 4px;
+  }
+  .subtitle {
+    text-align: center;
+    font-size: 13px;
+    color: rgb(95,66,29,0.8);
+    margin-bottom: 20px;
+  }
+  .card {
+    background: white;
+    border-radius: 16px;
+    padding: 18px;
+    margin: 0 auto 16px auto;
+    max-width: 480px;
+    box-shadow: 0 3px 10px rgba(0,0,0,.08);
+  }
+  .card h2 {
+    font-size: 16px;
+    margin: 0 0 12px 0;
+    color: rgb(95,66,29);
+  }
+  label {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    margin-bottom: 4px;
+    margin-top: 10px;
+  }
+  input[type="text"], input[type="password"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgb(95,66,29,0.3);
+    font-size: 15px;
+    font-family: inherit;
+  }
+  .hint {
+    font-size: 11px;
+    color: rgb(95,66,29,0.7);
+    margin-top: 3px;
+  }
+  button {
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    font-weight: 700;
+    padding: 12px 20px;
+    font-size: 15px;
+  }
+  .btn-primary {
+    background-color: rgb(95,66,29);
+    color: rgb(245,233,216);
+    width: 100%;
+    margin-top: 16px;
+  }
+  .btn-primary:active { transform: scale(0.98); }
+  .btn-secondary {
+    background: none;
+    color: rgb(95,66,29);
+    text-decoration: underline;
+    font-size: 13px;
+    padding: 4px;
+    width: auto;
+  }
+  #status {
+    max-width: 480px;
+    margin: 0 auto 16px auto;
+    text-align: center;
+    font-size: 14px;
+    min-height: 18px;
+  }
+  #status.error { color: #b3261e; }
+  #status.success { color: #2e7d32; }
+  #menu-area { max-width: 480px; margin: 0 auto; }
+  .section-heading {
+    font-size: 18px;
+    font-weight: 700;
+    color: rgb(95,66,29);
+    margin: 22px 0 10px 4px;
+  }
+  .item-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border-radius: 12px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,.06);
+  }
+  .item-name {
+    font-size: 15px;
+    font-weight: 500;
+    flex: 1;
+    padding-right: 10px;
+  }
+  .price-input-wrap {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .price-input-wrap input {
+    width: 80px;
+    text-align: right;
+    font-weight: 700;
+  }
+  .price-input-wrap.changed input {
+    border-color: rgb(114,197,93);
+    background-color: rgb(114,197,93,0.08);
+  }
+  #save-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: rgb(95,66,29);
+    padding: 14px 20px;
+    display: none;
+    z-index: 999;
+  }
+  #save-bar.show { display: block; }
+  #save-bar button {
+    max-width: 480px;
+    margin: 0 auto;
+    display: block;
+  }
+  #settings-toggle {
+    display: block;
+    text-align: center;
+    margin: 0 auto 16px auto;
+  }
+</style>
+</head>
+<body>
+
+<h1>🍽️ Menu Price Editor</h1>
+<div class="subtitle">Update your menu's prices — changes go live automatically</div>
+
+<div id="status"></div>
+
+<div class="card" id="settings-card">
+  <h2>Connection Settings</h2>
+  <label>GitHub Username (owner)</label>
+  <input type="text" id="gh-owner" placeholder="e.g. janedoe">
+
+  <label>Repository Name</label>
+  <input type="text" id="gh-repo" placeholder="e.g. my-cafe-menu">
+
+  <label>File Path</label>
+  <input type="text" id="gh-path" placeholder="e.g. index.html" value="index.html">
+
+  <label>Branch</label>
+  <input type="text" id="gh-branch" placeholder="main" value="main">
+
+  <label>Access Token</label>
+  <input type="password" id="gh-token" placeholder="paste your GitHub token here">
+  <div class="hint">Fine-grained token, scoped only to this repo, with "Contents: Read and write" permission. Saved only in this browser.</div>
+
+  <button class="btn-primary" id="load-btn">Load Menu</button>
+</div>
+
+<button class="btn-secondary" id="settings-toggle" style="display:none;">⚙️ Connection settings</button>
+
+<div id="menu-area"></div>
+
+<div id="save-bar">
+  <button class="btn-primary" id="save-btn">Save Changes</button>
+</div>
+
+<script>
+(function () {
+  var statusEl = document.getElementById('status');
+  var settingsCard = document.getElementById('settings-card');
+  var settingsToggle = document.getElementById('settings-toggle');
+  var menuArea = document.getElementById('menu-area');
+  var saveBar = document.getElementById('save-bar');
+  var loadBtn = document.getElementById('load-btn');
+  var saveBtn = document.getElementById('save-btn');
+
+  var fields = ['gh-owner', 'gh-repo', 'gh-path', 'gh-branch', 'gh-token'];
+  var currentSha = null;
+  var currentContent = null;
+  var items = []; // {name, section, numStart, numEnd, oldPrice}
+
+  // ---- restore saved settings ----
+  fields.forEach(function (id) {
+    var saved = localStorage.getItem('menuadmin_' + id);
+    if (saved) document.getElementById(id).value = saved;
+  });
+
+  function saveSettings() {
+    fields.forEach(function (id) {
+      localStorage.setItem('menuadmin_' + id, document.getElementById(id).value.trim());
+    });
+  }
+
+  function setStatus(msg, type) {
+    statusEl.textContent = msg;
+    statusEl.className = type || '';
+  }
+
+  function getConfig() {
+    return {
+      owner: document.getElementById('gh-owner').value.trim(),
+      repo: document.getElementById('gh-repo').value.trim(),
+      path: document.getElementById('gh-path').value.trim(),
+      branch: document.getElementById('gh-branch').value.trim() || 'main',
+      token: document.getElementById('gh-token').value.trim()
+    };
+  }
+
+  // ---- base64 helpers (UTF-8 safe, for Amharic text) ----
+  function b64EncodeUnicode(str) {
+    return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function (_, p1) {
+      return String.fromCharCode('0x' + p1);
+    }));
+  }
+  function b64DecodeUnicode(str) {
+    return decodeURIComponent(atob(str).split('').map(function (c) {
+      return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+    }).join(''));
+  }
+
+  function apiUrl(cfg) {
+    return 'https://api.github.com/repos/' + cfg.owner + '/' + cfg.repo + '/contents/' + cfg.path + '?ref=' + encodeURIComponent(cfg.branch);
+  }
+
+  // ---- parse items from raw HTML ----
+  function parseItems(content) {
+    var found = [];
+    var regex = /(<div class="food"[^>]*data-en="([^"]+)"[^>]*>[\s\S]*?<div class="price">\s*)(\d+)/g;
+    var m;
+    while ((m = regex.exec(content)) !== null) {
+      var name = m[2];
+      var numStart = m.index + m[1].length;
+      var numEnd = numStart + m[3].length;
+      var sectionId = null;
+      var lastSection = content.lastIndexOf('<section id="', m.index);
+      if (lastSection !== -1) {
+        var idMatch = content.slice(lastSection, lastSection + 40).match(/id="([^"]+)"/);
+        if (idMatch) sectionId = idMatch[1];
+      }
+      found.push({
+        name: name,
+        section: sectionId || 'other',
+        oldPrice: m[3],
+        numStart: numStart,
+        numEnd: numEnd
+      });
+    }
+    return found;
+  }
+
+  var sectionLabels = { food: 'Foods', drink: 'Drinks', desert: 'Deserts' };
+
+  function renderItems(list) {
+    menuArea.innerHTML = '';
+    var grouped = {};
+    var order = [];
+    list.forEach(function (it) {
+      if (!grouped[it.section]) { grouped[it.section] = []; order.push(it.section); }
+      grouped[it.section].push(it);
+    });
+
+    order.forEach(function (sectionId) {
+      var heading = document.createElement('div');
+      heading.className = 'section-heading';
+      heading.textContent = sectionLabels[sectionId] || sectionId;
+      menuArea.appendChild(heading);
+
+      grouped[sectionId].forEach(function (it) {
+        var row = document.createElement('div');
+        row.className = 'item-row';
+
+        var nameEl = document.createElement('div');
+        nameEl.className = 'item-name';
+        nameEl.textContent = it.name;
+
+        var wrap = document.createElement('div');
+        wrap.className = 'price-input-wrap';
+
+        var input = document.createElement('input');
+        input.type = 'number';
+        input.value = it.oldPrice;
+        input.dataset.numStart = it.numStart;
+        input.dataset.numEnd = it.numEnd;
+        input.dataset.oldPrice = it.oldPrice;
+
+        var unit = document.createElement('span');
+        unit.textContent = 'ETB';
+
+        input.addEventListener('input', function () {
+          wrap.classList.toggle('changed', input.value !== input.dataset.oldPrice);
+          toggleSaveBar();
+        });
+
+        wrap.appendChild(input);
+        wrap.appendChild(unit);
+        row.appendChild(nameEl);
+        row.appendChild(wrap);
+        menuArea.appendChild(row);
+      });
+    });
+  }
+
+  function toggleSaveBar() {
+    var anyChanged = !!menuArea.querySelector('.price-input-wrap.changed');
+    saveBar.classList.toggle('show', anyChanged);
+  }
+
+  loadBtn.addEventListener('click', function () {
+    var cfg = getConfig();
+    if (!cfg.owner || !cfg.repo || !cfg.path || !cfg.token) {
+      setStatus('Please fill in all fields.', 'error');
+      return;
+    }
+    saveSettings();
+    setStatus('Loading menu…');
+    loadBtn.disabled = true;
+
+    fetch(apiUrl(cfg), {
+      headers: {
+        'Authorization': 'Bearer ' + cfg.token,
+        'Accept': 'application/vnd.github+json'
+      }
+    })
+    .then(function (res) {
+      if (!res.ok) throw new Error('GitHub error ' + res.status + ' — check your username, repo, path, and token.');
+      return res.json();
+    })
+    .then(function (data) {
+      currentSha = data.sha;
+      currentContent = b64DecodeUnicode(data.content.replace(/\n/g, ''));
+      items = parseItems(currentContent);
+      if (items.length === 0) {
+        setStatus('Connected, but no items with prices were found. Check the file path.', 'error');
+        return;
+      }
+      renderItems(items);
+      settingsCard.style.display = 'none';
+      settingsToggle.style.display = 'block';
+      setStatus('Menu loaded. Edit prices below.', 'success');
+    })
+    .catch(function (err) {
+      setStatus(err.message, 'error');
+    })
+    .finally(function () {
+      loadBtn.disabled = false;
+    });
+  });
+
+  settingsToggle.addEventListener('click', function () {
+    settingsCard.style.display = settingsCard.style.display === 'none' ? 'block' : 'none';
+  });
+
+  saveBtn.addEventListener('click', function () {
+    var cfg = getConfig();
+    var inputs = Array.prototype.slice.call(menuArea.querySelectorAll('input[type="number"]'));
+    var changed = inputs.filter(function (i) { return i.value !== i.dataset.oldPrice; });
+
+    if (changed.length === 0) {
+      setStatus('No changes to save.', '');
+      return;
+    }
+
+    // sort descending by position so earlier offsets stay valid while we splice
+    changed.sort(function (a, b) { return b.dataset.numStart - a.dataset.numStart; });
+
+    var newContent = currentContent;
+    changed.forEach(function (input) {
+      var start = parseInt(input.dataset.numStart, 10);
+      var end = parseInt(input.dataset.numEnd, 10);
+      var newVal = String(parseInt(input.value, 10));
+      newContent = newContent.slice(0, start) + newVal + newContent.slice(end);
+    });
+
+    setStatus('Saving ' + changed.length + ' price change(s)…');
+    saveBtn.disabled = true;
+
+    fetch(apiUrl(cfg).split('?')[0], {
+      method: 'PUT',
+      headers: {
+        'Authorization': 'Bearer ' + cfg.token,
+        'Accept': 'application/vnd.github+json'
+      },
+      body: JSON.stringify({
+        message: 'Update menu prices via admin panel',
+        content: b64EncodeUnicode(newContent),
+        sha: currentSha,
+        branch: cfg.branch
+      })
+    })
+    .then(function (res) {
+      if (!res.ok) return res.json().then(function (d) { throw new Error(d.message || ('GitHub error ' + res.status)); });
+      return res.json();
+    })
+    .then(function (data) {
+      currentSha = data.content.sha;
+      currentContent = newContent;
+      items = parseItems(currentContent);
+      changed.forEach(function (input) {
+        input.dataset.oldPrice = input.value;
+        input.closest('.price-input-wrap').classList.remove('changed');
+      });
+      toggleSaveBar();
+      setStatus('Saved! Your live menu will update shortly.', 'success');
+    })
+    .catch(function (err) {
+      setStatus(err.message, 'error');
+    })
+    .finally(function () {
+      saveBtn.disabled = false;
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
