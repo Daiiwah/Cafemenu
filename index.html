@@ -36,12 +36,15 @@
     <div id="contact-popup" aria-hidden="true">
         <div class="contact-box" role="dialog" aria-modal="true" aria-label="Contact information">
             <button id="close-contact" type="button" aria-label="Close">&times;</button>
-            <p>Menu made by Dani · For your own restaurant menu, contact <a href="tel:0997194497">0997194497</a></p>
+            <p>Menu made by Dakiya· For your own restaurant menu, contact <a href="tel:0997194497">0997194497</a></p>
         </div>
     </div>
 
     <!-- LANGUAGE TOGGLE -->
     <button id="lang-toggle" type="button">አማ</button>
+
+    <!-- ADMIN LINK -->
+    <button id="admin-link" type="button">Admin</button>
 
     <!-- WELCOME SCREEN -->
     <div id="welcome-screen">
@@ -51,7 +54,7 @@
 
     <div class="title">
         <div class="logo"> 
-            <img class="logo-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtpZ1SipUYbKWid_vKs3spzzSVVE9MWdO-1j6gQJAXOeo29_qJejM6mDg&s">
+            <img class="logo-img" id="admin-tap-target" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtpZ1SipUYbKWid_vKs3spzzSVVE9MWdO-1j6gQJAXOeo29_qJejM6mDg&s">
         </div>
          <span data-en="MENU" data-am="ሜኑ">MENU</span> 
     </div>
@@ -93,7 +96,7 @@
             <div class="food" data-en="Special Burger" data-am="ስፔሻል በርገር">Special Burger</div>
             <div class="detail" data-en="beef, cheese, egg, vegetable" data-am="የበሬ ስጋ፣ አይብ፣ እንቁላል፣ አትክልት">beef, cheese, egg, vegetable</div>
             <div class="tags"><span class="tag chef" data-en="Chef's pick" data-am="የሼፍ ምርጫ">Chef's pick</span></div>
-            <div class="price">100 <span data-en="ETB" data-am="ብር">ETB</span></div>
+            <div class="price">500 <span data-en="ETB" data-am="ብር">ETB</span></div>
             <div class="more" data-en="Freshly prepared to order." data-am="በትዕዛዝ ትኩስ ተዘጋጅቶ ይቀርባል።">Freshly prepared to order.</div>
         </div>
 
@@ -106,7 +109,7 @@
         <div class="info">
             <div class="food" data-en="Classic Beef Burger" data-am="ክላሲክ የበሬ በርገር">Classic Beef Burger</div>
             <div class="detail" data-en="beef, cheese, lettuce, tomato" data-am="የበሬ ስጋ፣ አይብ፣ ሰላጣ፣ ቲማቲም">beef, cheese, lettuce, tomato</div>
-            <div class="price">850 <span data-en="ETB" data-am="ብር">ETB</span></div>
+            <div class="price">450 <span data-en="ETB" data-am="ብር">ETB</span></div>
             <div class="more" data-en="Freshly prepared to order." data-am="በትዕዛዝ ትኩስ ተዘጋጅቶ ይቀርባል።">Freshly prepared to order.</div>
         </div>
 
@@ -596,6 +599,27 @@
       welcome.addEventListener('click', hideWelcome);
     })();
 
+    
+    // ---------- ADMIN LINK (password-gated) ----------
+
+    (function () {
+      var ADMIN_PASSWORD = "cafe"; //
+      var ADMIN_PAGE = "admin.html";
+
+      var btn = document.getElementById('admin-link');
+      if (!btn) return;
+
+      btn.addEventListener('click', function () {
+        var entered = window.prompt("Enter admin password:");
+        if (entered === null) return; // cancelled
+        if (entered === ADMIN_PASSWORD) {
+          window.location.href = ADMIN_PAGE;
+        } else {
+          alert("Incorrect password.");
+        }
+      });
+    })();
+
     // TAP-TO-EXPAND ITEM DETAILS
     (function () {
       var containers = document.querySelectorAll('.container');
@@ -690,9 +714,6 @@
 
 </body>
 </html>
-
-
-
 
 <style>
 
@@ -793,6 +814,26 @@
         width: 80px; height: 40px;
     }
     #lang-toggle:active {
+        transform: scale(0.95);
+    }
+
+    /* ---------- ADMIN LINK ---------- */
+    #admin-link {
+        position: fixed;
+        top: 12px;
+        left: 12px;
+        z-index: 100001;
+        background-color: RGB(95,66,29,0.7);
+        color: RGB(245,233,216);
+        border: none;
+        font-family: "Rubik", sans-serif;
+        font-size: 13px;
+        font-weight: 700;
+        padding: 8px 14px;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+    #admin-link:active {
         transform: scale(0.95);
     }
     body.am-active .food,
@@ -1200,3 +1241,4 @@ html:has(#desert:target) nav a[href="#desert"] {
     
     }
 </style>
+</html>
