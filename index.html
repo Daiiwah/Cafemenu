@@ -889,7 +889,7 @@
 
     .side-menu-links {
         width: 80%;
-        height: 200px;
+        height: 300px;
         display: flex;
         flex-direction: column;
         gap: 8px;
@@ -909,16 +909,18 @@
     }
 
     .side-menu-item {
+        margin-left: 10px;
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 0px;
         width: 100%;
+        height: 150px;
         box-sizing: border-box;
         border: 1px solid rgba(255,255,255,.14);
         background: transparent;
         color: #f7ecdd;
         font-family: "Rubik", sans-serif;
-        font-size: 15px;
+        font-size: 25px;
         font-weight: 600;
         padding: 13px 12px;
         border-radius: 16px;
@@ -936,7 +938,8 @@
     }
     .side-menu-item:active { transform: scale(.97); }
     .side-menu-icon {
-        font-size: 28px;
+        margin-right: 10px;
+        font-size: 38px;
         width: 40px;
         text-align: center;
         flex-shrink: 0;
@@ -945,7 +948,7 @@
 
     .side-menu-social {
         display: flex;
-        gap: 16px;
+        gap: 20px;
         bottom: 100px;
     }
     .social-icon {
@@ -993,6 +996,8 @@
         letter-spacing: .02em;
         color:gold;
         text-align: center;
+        margin-top: 100px;
+        margin-bottom: 20px;
     }
 
     /* ---------- CONTACT POPUP ---------- */
@@ -1014,7 +1019,7 @@
         width: min(520px, 90vw);
         height: 200px;
         box-sizing: border-box;
-        background: RGB(245,233,216,0.4);
+        background: RGB(245,233,216,0.9);
         color: RGB(49,37,18);
         border-radius: 20px;
         padding: 35px 45px 30px 30px;
