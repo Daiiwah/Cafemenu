@@ -54,7 +54,6 @@
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtpZ1SipUYbKWid_vKs3spzzSVVE9MWdO-1j6gQJAXOeo29_qJejM6mDg&s">
         </div>
 
-
         <nav class="side-menu-links">
             <button type="button" id="side-edit-menu" class="side-menu-item">
                 <span class="side-menu-icon">&#127860;</span>
@@ -66,22 +65,23 @@
             </button>
         </nav>
 
+        <div class="side-menu-bottom">
+            <div class="side-menu-social">
+                <a href="https://www.tiktok.com/@yourrestaurant" target="_blank" rel="noopener" class="social-icon" aria-label="TikTok">
+                    <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M12.75 2h2.9c.18 1.24.77 2.36 1.64 3.19.95.9 2.21 1.46 3.6 1.55v2.93c-1.44-.05-2.79-.47-3.96-1.19v6.53c0 3.4-2.76 6.16-6.16 6.16A6.16 6.16 0 0 1 4.6 15c0-3.28 2.6-5.96 5.85-6.14v3.02a3.14 3.14 0 0 0-2.06 2.96 3.15 3.15 0 0 0 6.3.1V2z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/yourrestaurant" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+                    <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+                </a>
+            </div>
 
-        <div class="side-menu-social">
-            <a href="https://www.tiktok.com/@yourrestaurant" target="_blank" rel="noopener" class="social-icon" aria-label="TikTok">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M12.75 2h2.9c.18 1.24.77 2.36 1.64 3.19.95.9 2.21 1.46 3.6 1.55v2.93c-1.44-.05-2.79-.47-3.96-1.19v6.53c0 3.4-2.76 6.16-6.16 6.16A6.16 6.16 0 0 1 4.6 15c0-3.28 2.6-5.96 5.85-6.14v3.02a3.14 3.14 0 0 0-2.06 2.96 3.15 3.15 0 0 0 6.3.1V2z"/></svg>
+            <a href="mailto:info@kenteri.com" class="side-menu-email">
+                <span class="side-menu-icon">&#9993;</span>
+                <span>info@kenteri.com</span>
             </a>
-            <a href="https://www.instagram.com/yourrestaurant" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
-                <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
-            </a>
+
+            <div class="side-menu-footer" data-en="Menu made by Dakiya" data-am="ሜኑ የተሰራው በ ዳኪያ">Menu made by Dakiya</div>
         </div>
-
-        <a href="mailto:info@kenteri.com" class="side-menu-email">
-            <span class="side-menu-icon">&#9993;</span>
-            <span>info@kenteri.com</span>
-        </a>
-
-        <div class="side-menu-footer" data-en="Menu made by Dakiya" data-am="ሜኑ የተሰራው በ ዳኪያ">Menu made by Dakiya</div>
     </div>
 
     <!-- WELCOME SCREEN -->
@@ -781,11 +781,6 @@
 </body>
 </html>
 
-
-
-
-
-
 <style>
 
 
@@ -832,13 +827,13 @@
         pointer-events: auto;
     }
 
-    /* ---------- SIDE MENU PANEL (futuristic glass) 268px---------- */
+    /* ---------- SIDE MENU PANEL (futuristic glass) ---------- */
     #side-menu {
         position: fixed;
         top: 14px;
         left: 14px;
         bottom: 14px;
-        width: 60%; 
+        width: 60vw;
         border-radius: 30px;
         background: linear-gradient(160deg, rgba(255,255,255,0.16), rgba(255,255,255,0.03) 55%, rgba(255,255,255,0.08));
         backdrop-filter: blur(30px) saturate(190%);
@@ -858,6 +853,7 @@
         box-sizing: border-box;
         font-family: "Rubik", sans-serif;
         overflow-y: auto;
+        overflow-x: hidden;
         transform: translateX(-130%);
         transition: transform .45s cubic-bezier(.19,1,.22,1);
     }
@@ -895,28 +891,39 @@
         width: 80%;
         display: flex;
         flex-direction: column;
-        gap: px;
-        top: 40%; right: 10px; left: 10px;
-        border-radius: 40px;
+        gap: 8px;
+        top: 30%;
         background-color: transparent;
+    }
 
+    .side-menu-bottom {
+        margin-top: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
     }
 
     .side-menu-item {
         display: flex;
         align-items: center;
-        gap: 14px;
+        gap: 10px;
         width: 100%;
+        box-sizing: border-box;
         border: 1px solid rgba(255,255,255,.14);
         background: rgba(255,255,255,.06);
         color: #f7ecdd;
         font-family: "Rubik", sans-serif;
-        font-size: 16px;
+        font-size: 15px;
         font-weight: 600;
-        padding: 13px 14px;
+        padding: 13px 12px;
         border-radius: 16px;
         cursor: pointer;
         text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
         backdrop-filter: blur(6px);
         transition: background .18s ease, transform .12s ease, border-color .18s ease;
     }
@@ -926,8 +933,8 @@
     }
     .side-menu-item:active { transform: scale(.97); }
     .side-menu-icon {
-        font-size: 19px;
-        width: 50px;
+        font-size: 18px;
+        width: 20px;
         text-align: center;
         flex-shrink: 0;
         filter: drop-shadow(0 0 6px rgba(255,196,120,.5));
@@ -936,10 +943,8 @@
     .side-menu-social {
         display: flex;
         gap: 16px;
-       
     }
     .social-icon {
-        bottom: 10px;
         color: #f7ecdd;
         width: 42px;
         height: 42px;
@@ -955,16 +960,15 @@
         transform: scale(1.08);
         background: rgba(255,196,120,.18);
         box-shadow: 0 0 16px rgba(255,196,120,.35);
-    
     }
 
     .side-menu-email {
         display: flex;
         align-items: center;
         gap: 10px;
-        color:gold;
+        color: rgb(255,196,120);
         font-family: "Rubik", sans-serif;
-        font-size: 13.5px;
+        font-size: 15px;
         font-weight: 600;
         text-decoration: none;
         word-break: break-all;
@@ -972,7 +976,7 @@
         background: rgba(255,255,255,.06);
         padding: 10px 14px;
         border-radius: 14px;
-        width: 100%;
+        width: 70%;
         box-sizing: border-box;
     }
     .side-menu-email:hover { background: rgba(255,255,255,.12); }
@@ -981,10 +985,8 @@
         font-family: "Rubik", sans-serif;
         font-size: 11px;
         letter-spacing: .02em;
-        color: silver;
+        color:gold;
         text-align: center;
-        font-size: 20px;
-        top: 1000px;
     }
 
     /* ---------- CONTACT POPUP ---------- */
